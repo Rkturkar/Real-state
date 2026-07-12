@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Property Details | PropertyBazaar</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand__mark">PB</span>
+      <span class="brand__name">Property<span>Bazaar</span></span>
+    </a>
+
+    <nav class="main-nav" id="nav-menu" aria-label="Primary">
+      <ul class="main-nav__list">
+        <li><a href="index.html">Buy</a></li>
+        <li><a href="index.html#listings-section">Rent</a></li>
+        <li><a href="index.html#listings-section">Commercial</a></li>
+        <li><a href="#">Sell with us</a></li>
+        <li><a href="#">Agents</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="dark-mode-toggle" aria-label="Switch to dark mode"></button>
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="detail-page">
+  <div class="container">
+    <button class="back-btn" id="back-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to listings
+    </button>
+
+    <div id="detail-content">
+      <!-- Skeleton is injected here by property.js while loading -->
+    </div>
+
+    <!-- Real markup — populated by property.js via renderProperty() -->
+    <div class="detail-grid">
+      <div>
+        <!-- Carousel -->
+        <div class="carousel">
+          <div class="carousel__track" id="carousel-track"></div>
+          <button class="carousel__nav carousel__nav--prev" id="carousel-prev" aria-label="Previous image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="carousel__nav carousel__nav--next" id="carousel-next" aria-label="Next image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="carousel__dots" id="carousel-dots"></div>
+        </div>
+
+        <!-- Header -->
+        <div class="detail-header">
+          <div class="detail-header__main">
+            <div id="prop-price"></div>
+            <h1 id="prop-title"></h1>
+            <p class="detail-loc">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span id="prop-location"></span>
+            </p>
+            <span class="prop-badge" id="prop-type-badge"></span>
+          </div>
+          <div class="detail-actions">
+            <button class="btn btn--outline" id="detail-fav-btn"></button>
+          </div>
+        </div>
+
+        <!-- Key stats -->
+        <div class="key-stats">
+          <div class="key-stat" id="stat-bed-row">
+            <span class="key-stat__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
+            </span>
+            <div>
+              <div class="key-stat__value" id="stat-bed"></div>
+              <div class="key-stat__label">Bedrooms</div>
+            </div>
+          </div>
+          <div class="key-stat">
+            <span class="key-stat__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" x2="8" y1="5" y2="7"/><line x1="2" x2="22" y1="12" y2="12"/><line x1="7" x2="7" y1="12" y2="17"/><line x1="12" x2="12" y1="12" y2="17"/><line x1="17" x2="17" y1="12" y2="17"/></svg>
+            </span>
+            <div>
+              <div class="key-stat__value" id="stat-bath"></div>
+              <div class="key-stat__label">Bathrooms</div>
+            </div>
+          </div>
+          <div class="key-stat">
+            <span class="key-stat__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>
+            </span>
+            <div>
+              <div class="key-stat__value" id="stat-area"></div>
+              <div class="key-stat__label">Carpet area</div>
+            </div>
+          </div>
+          <div class="key-stat">
+            <span class="key-stat__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 22V12h6v10"/><path d="M3 7h18"/><path d="M3 11h18"/><path d="M3 15h6"/><path d="M15 15h6"/></svg>
+            </span>
+            <div>
+              <div class="key-stat__value" id="stat-type"></div>
+              <div class="key-stat__label">Property type</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="detail-section">
+          <h2>About this property</h2>
+          <p id="prop-description"></p>
+        </div>
+
+        <!-- Amenities -->
+        <div class="detail-section">
+          <h2>Amenities</h2>
+          <div class="amenities-grid" id="prop-amenities"></div>
+        </div>
+
+        <!-- Project facts -->
+        <div class="detail-section">
+          <h2>Project details</h2>
+          <dl class="project-facts">
+            <div class="project-fact">
+              <dt>Project name</dt>
+              <dd id="prop-project"></dd>
+            </div>
+            <div class="project-fact">
+              <dt>Builder</dt>
+              <dd id="prop-builder"></dd>
+            </div>
+            <div class="project-fact">
+              <dt>RERA number</dt>
+              <dd id="prop-rera"></dd>
+            </div>
+            <div class="project-fact">
+              <dt>Possession</dt>
+              <dd id="prop-possession"></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Sidebar: agent -->
+      <aside class="agent-card">
+        <div class="agent-card__seal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          RERA-checked listing
+        </div>
+        <div class="agent-card__profile">
+          <span class="agent-card__avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <div>
+            <div id="agent-name"></div>
+            <div class="agent-card__role">Listing agent</div>
+          </div>
+        </div>
+        <div class="agent-contact-list">
+          <a href="#" id="agent-phone-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.55 5.55l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span id="agent-phone"></span>
+          </a>
+          <a href="#" id="agent-email-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span id="agent-email"></span>
+          </a>
+        </div>
+        <button class="btn btn--primary btn--block" id="contact-agent-btn">Contact agent</button>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <span>© 2026 PropertyBazaar. All rights reserved.</span>
+      <span class="footer-seal">◆ RERA-checked network</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════ CONTACT MODAL ══════════════════════════════ -->
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-head">
+      <div>
+        <h3 id="modal-title">Contact the agent</h3>
+        <p>Usually responds within a few hours.</p>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <form id="contact-form">
+      <div class="form-field">
+        <label for="cf-name">Your name</label>
+        <input type="text" id="cf-name" required />
+      </div>
+      <div class="form-field">
+        <label for="cf-phone">Phone number</label>
+        <input type="tel" id="cf-phone" required />
+      </div>
+      <div class="form-field">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" placeholder="I'd like to schedule a site visit…"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary btn--block">Send message</button>
+    </form>
+  </div>
+</div>
+
+<button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="config.js"></script>
+<script src="mock-data.js"></script>
+<script src="utils.js"></script>
+<script src="api.js"></script>
+<script src="property.js"></script>
+</body>
+</html>

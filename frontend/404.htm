@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Listing not found | PropertyBazaar</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand__mark">PB</span>
+      <span class="brand__name">Property<span>Bazaar</span></span>
+    </a>
+    <div class="header-actions">
+      <button class="icon-btn" id="dark-mode-toggle" aria-label="Switch to dark mode"></button>
+    </div>
+  </div>
+</header>
+
+<main class="notfound">
+  <div>
+    <div class="notfound__seal">NOT ON<br />RECORD</div>
+    <h1>This listing isn't on the ledger.</h1>
+    <p>The property you're looking for may have been sold, delisted, or the link is out of date.</p>
+    <a href="index.html" class="btn btn--primary">Back to listings</a>
+  </div>
+</main>
+
+<script src="config.js"></script>
+<script src="utils.js"></script>
+<script>
+  // Lightweight dark-mode toggle only — no property data needed on this page.
+  (() => {
+    const saved = localStorage.getItem("re_theme") || "light";
+    document.documentElement.setAttribute("data-theme", saved);
+    const btn = document.getElementById("dark-mode-toggle");
+    const setIcon = (t) => { btn.innerHTML = t === "dark" ? Utils.ICONS.sun : Utils.ICONS.moon; };
+    setIcon(saved);
+    btn.addEventListener("click", () => {
+      const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("re_theme", next);
+      setIcon(next);
+    });
+  })();
+</script>
+</body>
+</html>

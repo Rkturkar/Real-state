@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PropertyBazaar — Verified Homes &amp; Offices Across India</title>
+<meta name="description" content="Search apartments, villas, independent houses and commercial spaces across India — every listing RERA-checked." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand__mark">PB</span>
+      <span class="brand__name">Property<span>Bazaar</span></span>
+    </a>
+
+    <nav class="main-nav" id="nav-menu" aria-label="Primary">
+      <ul class="main-nav__list">
+        <li><a href="index.html" class="is-active">Buy</a></li>
+        <li><a href="#listings-section">Rent</a></li>
+        <li><a href="#listings-section">Commercial</a></li>
+        <li><a href="#">Sell with us</a></li>
+        <li><a href="#">Agents</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="dark-mode-toggle" aria-label="Switch to dark mode"></button>
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <span class="hero__eyebrow">◆ RERA-checked listings, every state</span>
+      <h1>Find a home that's <em>on the record.</em></h1>
+      <p class="hero__sub">
+        PropertyBazaar lists apartments, villas, independent houses and commercial
+        space across India — with the builder, RERA number and possession date
+        verified before it ever reaches you.
+      </p>
+
+      <div class="hero-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="hero-search-input" placeholder="Search by city, locality or project name…" />
+        <button class="btn btn--primary" id="hero-search-btn">Search</button>
+      </div>
+
+      <div class="hero__stats">
+        <div>
+          <div class="hero__stat-num">12,400+</div>
+          <div class="hero__stat-label">Verified listings</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">28</div>
+          <div class="hero__stat-label">Cities covered</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">100%</div>
+          <div class="hero__stat-label">RERA checked</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__seal-wrap">
+      <div class="hero__seal">
+        <div class="hero__seal-core">
+          VERIFIED
+          <small>RERA · Est. 2016</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ FEATURED ══════════════════════════════ -->
+<section class="featured">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="section-eyebrow">Hand-picked</span>
+        <h2>Featured this week</h2>
+      </div>
+      <div class="ledger-rule"></div>
+    </div>
+    <div id="featured-strip" class="featured-strip">
+      <!-- JS renders 3 featured cards here -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ LISTINGS ══════════════════════════════ -->
+<section class="listings" id="listings-section">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <span class="section-eyebrow">The full ledger</span>
+        <h2>All listings</h2>
+      </div>
+      <div class="ledger-rule"></div>
+    </div>
+
+    <!-- Filters bar -->
+    <div class="filters-bar">
+      <div class="search-field">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" placeholder="Search title, city or locality…" aria-label="Search properties" />
+        <button class="search-clear" id="search-clear" aria-label="Clear search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="filter-select-wrap">
+        <select class="filter-select" id="filter-type" aria-label="Property type">
+          <option value="">Property type</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Villa">Villa</option>
+          <option value="Independent House">Independent House</option>
+          <option value="Commercial">Commercial</option>
+        </select>
+      </div>
+
+      <div class="filter-select-wrap">
+        <select class="filter-select" id="filter-price" aria-label="Price range">
+          <option value="">Any price</option>
+          <option value="below_50">Below ₹50 L</option>
+          <option value="50_to_1cr">₹50 L – ₹1 Cr</option>
+          <option value="above_1cr">Above ₹1 Cr</option>
+        </select>
+      </div>
+
+      <div class="filter-select-wrap">
+        <select class="filter-select" id="filter-bedrooms" aria-label="Bedrooms">
+          <option value="">Any BHK</option>
+          <option value="1">1 BHK</option>
+          <option value="2">2 BHK</option>
+          <option value="3">3 BHK</option>
+          <option value="4+">4+ BHK</option>
+        </select>
+      </div>
+
+      <div class="filter-select-wrap">
+        <select class="filter-select" id="filter-city" aria-label="City">
+          <option value="">All cities</option>
+        </select>
+      </div>
+
+      <button class="btn btn--outline btn--sm" id="filter-reset">Clear filters</button>
+
+      <div class="sort-field">
+        <label for="sort-select">Sort</label>
+        <div class="filter-select-wrap">
+          <select class="filter-select" id="sort-select" aria-label="Sort by">
+            <option value="newest">Newest first</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-row">
+      <p id="properties-count" aria-live="polite">Loading…</p>
+    </div>
+
+    <div class="properties-grid" id="properties-grid" aria-live="polite">
+      <!-- JS renders property cards / skeletons here -->
+    </div>
+
+    <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand__name">Property<span>Bazaar</span></span>
+        <p>Every listing is checked against its RERA registration before it goes live — so what you see on screen is what's on record.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Buy a home</a></li>
+          <li><a href="#listings-section">Commercial space</a></li>
+          <li><a href="#">New projects</a></li>
+          <li><a href="#">Locality guides</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">RERA disclosures</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PropertyBazaar. All rights reserved.</span>
+      <span class="footer-seal">◆ RERA-checked network</span>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="config.js"></script>
+<script src="mock-data.js"></script>
+<script src="utils.js"></script>
+<script src="api.js"></script>
+<script src="search.js"></script>
+<script src="filter.js"></script>
+<script src="sort.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
